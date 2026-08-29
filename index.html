@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday Manasvi 👑</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    background:
+        radial-gradient(circle at top, #3b2a0d 0%, #17120b 35%, #070707 100%);
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* GOLD PARTICLES */
+.particle {
+    position: fixed;
+    width: 5px;
+    height: 5px;
+    background: #ffd86b;
+    border-radius: 50%;
+    pointer-events: none;
+    animation: float 7s linear infinite;
+    opacity: 0.7;
+    z-index: 0;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(100vh) scale(0);
+        opacity: 0;
+    }
+    20% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(-10vh) scale(1.5);
+        opacity: 0;
+    }
+}
+
+/* HERO */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 30px 18px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-box {
+    max-width: 850px;
+    padding: 45px 25px;
+}
+
+.crown {
+    font-size: 65px;
+    animation: crown 2s infinite alternate;
+}
+
+@keyframes crown {
+    from { transform: translateY(0) rotate(-4deg); }
+    to { transform: translateY(-12px) rotate(4deg); }
+}
+
+.small-title {
+    color: #f6cf69;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-size: 14px;
+    margin-top: 15px;
+}
+
+h1 {
+    font-size: clamp(48px, 12vw, 105px);
+    margin: 10px 0;
+    background: linear-gradient(90deg, #fff1a8, #d9a928, #fff4b5);
+    -webkit-background-clip: text;
+    color: transparent;
+    text-shadow: 0 0 35px rgba(255,210,80,.25);
+}
+
+.nickname {
+    font-size: clamp(22px, 5vw, 38px);
+    color: #ffd96b;
+    font-style: italic;
+}
+
+.date {
+    margin: 22px 0;
+    font-size: 20px;
+    color: #eee;
+}
+
+.marathi {
+    font-size: 21px;
+    line-height: 1.7;
+    color: #f8df9a;
+}
+
+/* BUTTON */
+.music-btn {
+    margin-top: 28px;
+    padding: 14px 28px;
+    border: 1px solid #e7c35d;
+    border-radius: 50px;
+    background: rgba(255,215,100,.08);
+    color: #ffe58c;
+    font-size: 16px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.music-btn:hover {
+    background: #d6ad3b;
+    color: #111;
+    transform: scale(1.05);
+}
+
+/* SECTIONS */
+section {
+    position: relative;
+    z-index: 1;
+    padding: 70px 18px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.section-title {
+    text-align: center;
+    color: #f3cc62;
+    font-size: 34px;
+    margin-bottom: 35px;
+}
+
+.section-title span {
+    display: block;
+    font-size: 15px;
+    color: #aaa;
+    margin-top: 8px;
+    font-family: Arial, sans-serif;
+}
+
+/* MESSAGE */
+.card {
+    background: rgba(255,255,255,.055);
+    border: 1px solid rgba(231,195,93,.3);
+    border-radius: 25px;
+    padding: 35px 25px;
+    box-shadow: 0 15px 50px rgba(0,0,0,.35);
+    backdrop-filter: blur(8px);
+}
+
+.message {
+    text-align: center;
+    font-size: 20px;
+    line-height: 1.9;
+    color: #eee;
+}
+
+.message strong {
+    color: #ffd968;
+}
+
+/* PHOTOS */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.photo-card {
+    background: #151515;
+    border-radius: 20px;
+    padding: 10px;
+    border: 1px solid rgba(255,215,100,.25);
+    transition: .4s;
+}
+
+.photo-card:hover {
+    transform: translateY(-8px) rotate(1deg);
+    box-shadow: 0 15px 40px rgba(220,170,50,.2);
+}
+
+.photo-card img {
+    width: 100%;
+    height: 330px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.caption {
+    text-align: center;
+    padding: 14px 5px 8px;
+    color: #f4d77b;
+    font-size: 17px;
+}
+
+/* VIDEOS */
+.videos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 22px;
+}
+
+video {
+    width: 100%;
+    border-radius: 20px;
+    border: 1px solid rgba(255,215,100,.3);
+    background: #000;
+}
+
+/* QUOTES */
+.quote {
+    text-align: center;
+    padding: 35px 20px;
+    margin: 20px 0;
+    border-left: 3px solid #e0bd55;
+    border-right: 3px solid #e0bd55;
+}
+
+.quote p {
+    font-size: 23px;
+    line-height: 1.7;
+    color: #f7e4a0;
+    font-style: italic;
+}
+
+.quote small {
+    display: block;
+    margin-top: 15px;
+    color: #aaa;
+}
+
+/* COUNTDOWN */
+.countdown {
+    text-align: center;
+    font-size: 28px;
+    color: #ffd968;
+    margin-top: 20px;
+}
+
+/* FINAL */
+.final {
+    text-align: center;
+    padding-bottom: 100px;
+}
+
+.final h2 {
+    font-size: 38px;
+    color: #f1ce69;
+    margin-bottom: 20px;
+}
+
+.final p {
+    font-size: 19px;
+    line-height: 1.8;
+    color: #ddd;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 25px;
+    color: #777;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+}
+
+/* MOBILE */
+@media(max-width:600px) {
+    .hero-box {
+        padding-top: 70px;
+    }
+
+    .crown {
+        font-size: 50px;
+    }
+
+    section {
+        padding: 50px 15px;
+    }
+
+    .message {
+        font-size: 17px;
+    }
+
+    .quote p {
+        font-size: 19px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Floating particles -->
+<script>
+for(let i = 0; i < 35; i++){
+    const p = document.createElement("div");
+    p.className = "particle";
+    p.style.left = Math.random() * 100 + "vw";
+    p.style.animationDelay = Math.random() * 7 + "s";
+    p.style.animationDuration = (5 + Math.random() * 6) + "s";
+    document.body.appendChild(p);
+}
+</script>
+
+<!-- MUSIC -->
+<audio id="music" loop>
+    <source src="media/music.mp3" type="audio/mpeg">
+</audio>
+
+<!-- HERO -->
+<header class="hero">
+    <div class="hero-box">
+
+        <div class="crown">👑</div>
+
+        <div class="small-title">
+            A Little Birthday Surprise
+        </div>
+
+        <h1>Manasvi</h1>
+
+        <div class="nickname">
+            ✨ Mauuu ✨
+        </div>
+
+        <div class="date">
+            🎂 14 September 🎂
+        </div>
+
+        <p class="marathi">
+            तुझ्या आयुष्यात नेहमी आनंद, हसू आणि सुंदर क्षण असू दे. 💫
+            <br>
+            वाढदिवसाच्या खूप खूप शुभेच्छा! ❤️
+        </p>
+
+        <button class="music-btn" onclick="toggleMusic()">
+            🎵 Play Birthday Music
+        </button>
+
+    </div>
+</header>
+
+
+<!-- MESSAGE -->
+<section>
+
+    <h2 class="section-title">
+        For You, Mauuu 💌
+        <span>एक छोटीशी मनापासून गोष्ट...</span>
+    </h2>
+
+    <div class="card message">
+
+        <p>
+            Some people enter our life normally,
+            but somehow become a beautiful part of our memories.
+        </p>
+
+        <br>
+
+        <p>
+            <strong>Manasvi</strong>, तू माझ्यासाठी अशीच एक खास व्यक्ती आहेस.
+            तुझ्यासोबतच्या छोट्या छोट्या moments सुद्धा
+            कधी कधी खूप special वाटतात. ✨
+        </p>
+
+        <br>
+
+        <p>
+            आपल्या friendship ची किंमत माझ्यासाठी खूप आहे.
+            काही भावना शब्दांत सांगता येत नाहीत,
+            म्हणून त्या फक्त मनात जपून ठेवलेल्या बऱ्या. ❤️
+        </p>
+
+        <br>
+
+        <p class="marathi">
+            "काही माणसं आयुष्यात येतात,
+            आणि नकळत आठवणींचा सुंदर भाग बनून जातात."
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- PHOTO GALLERY -->
+<section>
+
+    <h2 class="section-title">
+        Beautiful Memories 📸
+        <span>आपल्या आठवणींचा छोटासा संग्रह</span>
+    </h2>
+
+    <div class="gallery">
+
+        <div class="photo-card">
+            <img src="media/photo1.jpg" alt="Memory 1">
+            <div class="caption">
+                🌸 A little beautiful memory
+            </div>
+        </div>
+
+        <div class="photo-card">
+            <img src="media/photo2.jpg" alt="Memory 2">
+            <div class="caption">
+                ✨ Moments worth remembering
+            </div>
+        </div>
+
+        <div class="photo-card">
+            <img src="media/photo3.jpg" alt="Memory 3">
+            <div class="caption">
+                💫 एक सुंदर आठवण
+            </div>
+        </div>
+
+        <div class="photo-card">
+            <img src="media/photo4.jpg" alt="Memory 4">
+            <div class="caption">
+                👑 Queen Mauuu
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PHOTO QUOTES -->
+<section>
+
+    <h2 class="section-title">
+        Little Quotes 🌙
+    </h2>
+
+    <div class="quote">
+        <p>
+            "Some memories don't need a reason;
+            they simply deserve to be remembered."
+        </p>
+        <small>— For Mauuu ✨</small>
+    </div>
+
+    <div class="quote">
+        <p>
+            "तुझं हसू असंच कायम राहू दे,
+            कारण ते खूप सुंदर आहे." 🌸
+        </p>
+        <small>— एक छोटासा शुभेच्छा संदेश</small>
+    </div>
+
+    <div class="quote">
+        <p>
+            "Life gives us many people,
+            but only a few become unforgettable memories."
+        </p>
+        <small>— Birthday thoughts 💫</small>
+    </div>
+
+</section>
+
+
+<!-- VIDEOS -->
+<section>
+
+    <h2 class="section-title">
+        Special Moments 🎬
+        <span>Watch the memories</span>
+    </h2>
+
+    <div class="videos">
+
+        <div>
+            <video controls poster="media/photo1.jpg">
+                <source src="media/video1.mp4" type="video/mp4">
+                Your browser does not support video.
+            </video>
+        </div>
+
+        <div>
+            <video controls poster="media/photo2.jpg">
+                <source src="media/video2.mp4" type="video/mp4">
+                Your browser does not support video.
+            </video>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- MARATHI MESSAGE -->
+<section>
+
+    <h2 class="section-title">
+        मनापासून ❤️
+    </h2>
+
+    <div class="card message">
+
+        <p class="marathi">
+            तुझं आयुष्य नेहमी आनंदाने भरलेलं असावं,
+            तुझ्या प्रत्येक स्वप्नाला नवी दिशा मिळावी,
+            आणि प्रत्येक दिवस तुझ्यासाठी
+            कालपेक्षा सुंदर असावा.
+        </p>
+
+        <br>
+
+        <p class="marathi">
+            कितीही वर्षं गेली तरी
+            आजच्या या छोट्याशा birthday surprise ची
+            एक गोड आठवण राहावी... ✨
